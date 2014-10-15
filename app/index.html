@@ -57,6 +57,37 @@
                 layout_all();
             </script>
 
+            <script>
+                var end = new Date('11/29/2014 8:0 AM');
+                var second = 1000;
+                var minute = second * 60;
+                var hour = minute * 60;
+                var day = hour * 24;
+                var timer;
+
+                function showRemaining() {
+                    var now = new Date();
+                    var period = end - now;
+                    if (period < 0) {
+                        clearInterval(timer);
+                        document.getElementById('countdown').innerHTML = '';
+                        return;
+                    }
+                    var days = Math.floor(period / day);
+                    var hours = Math.floor((period % day) / hour);
+                    var minutes = Math.floor((period % hour) / minute);
+                    var seconds = Math.floor((period % minute) / second);
+
+                    document.getElementById('1129countdown').innerHTML = days + 'days ';
+                    document.getElementById('1129countdown').innerHTML += hours + 'hrs ';
+                    document.getElementById('1129countdown').innerHTML += minutes + 'mins ';
+                    document.getElementById('1129countdown').innerHTML += seconds + 'secs';
+                }
+
+                timer = setInterval(showRemaining, 1000);
+            </script>
+            <div id="1129countdown"></div>
+
             <div ng-view="">
 
             </div>
