@@ -64,3 +64,19 @@
     position: relative;
     margin-right: 10%;
 }
+
+.full-width {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    width: 100%;
+}
+
+.nav{
+    li{
+        a{
+          position: relative;
+          display: block;
+          padding: 0px 0px;
+        }
+    }
+}
